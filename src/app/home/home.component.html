@@ -1,0 +1,20 @@
+<nz-layout class="main">
+  <nz-header class="header">Header</nz-header>
+  <nz-layout>
+    <nz-sider>
+      <ul nz-menu nzMode="inline" nzTheme="dark">
+        <li nz-menu-item routerLinkActive="ant-menu-item-selected">
+          <a [routerLink]="['/home/categories']">Categories</a>
+        </li>
+        <li nz-menu-item routerLinkActive="ant-menu-item-selected">Questionnairies
+<!--          <a [routerLink]="['/home/category']">Category</a>-->
+        </li>
+      </ul>
+    </nz-sider>
+    <nz-layout>
+      <nz-content class="content">
+        <router-outlet></router-outlet>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+</nz-layout>

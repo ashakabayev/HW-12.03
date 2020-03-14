@@ -1,0 +1,32 @@
+<a nz-button nzType="primary" routerLink="/home/category">Create category</a>
+<div class="getById">
+  <form nz-form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please enter category name">
+        <input
+          type="text"
+          nz-input
+          formControlName="byName"
+          placeholder="Please type category name to find it"
+        />
+      </nz-form-control>
+      <button nz-button nzType="primary">Find</button>
+    </nz-form-item>
+  </form>
+  <div>{{oneCategory ? "id:" + oneCategory.id+",  name:"+oneCategory.name : "Invalid category name"}}</div>
+</div>
+<nz-table #table [nzData]="categories" class="getAll">
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let category of table.data">
+    <td>{{ category.id}}</td>
+    <td>{{ category.name}}</td>
+    <td><a [routerLink]="['/home', 'category', category.id]" (click)="editClicked(category)">Edit</a></td>
+  </tr>
+  </tbody>
+</nz-table>
+

@@ -1,0 +1,13 @@
+<form nz-form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <nz-form-item>
+      <nz-form-control nzErrorTip="Please enter category name">
+        <input
+          type="text"
+          nz-input
+          formControlName="name"
+          placeholder="Category name"/>
+<!--          ngModel="{{ ? name : null}}"-->
+      </nz-form-control>
+    <button nz-button nzType="primary">Save</button>
+  </nz-form-item>
+</form>
